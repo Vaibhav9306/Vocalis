@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "ScribeP2P - Floating Meeting Copilot",
+  "version": "1.0.0",
+  "description": "Minimal floating horizontal command bar widget for real-time speech transcription & AI meeting intelligence.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "https://*.zoom.us/*",
+    "https://teams.microsoft.com/*",
+    "http://localhost:5173/*",
+    "http://localhost:3001/*",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["audio-processor.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_title": "Toggle Scribe Floating Command Bar"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

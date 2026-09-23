@@ -1,0 +1,32 @@
+{
+  "name": "meeting-assistant-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Meeting Assistant - Local Monorepo Foundation",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:backend": "npm run dev -w @meeting-assistant/backend",
+    "dev:frontend": "npm run dev -w @meeting-assistant/frontend",
+    "build": "npm run build --workspaces",
+    "build:backend": "npm run build -w @meeting-assistant/backend",
+    "build:frontend": "npm run build -w @meeting-assistant/frontend",
+    "type-check": "npm run type-check --workspaces",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:backend": "npm run test -w @meeting-assistant/backend",
+    "start": "node apps/backend/dist/server.js"
+  },
+  "keywords": [
+    "azure",
+    "openai",
+    "speech",
+    "meeting-assistant",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC"
+}
